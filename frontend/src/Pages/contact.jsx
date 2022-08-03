@@ -1,4 +1,4 @@
-import ContactLogo from "../../images/ContactLogo.PNG"
+import ContactLogo from "../images/ContactLogo.PNG"
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
 
 

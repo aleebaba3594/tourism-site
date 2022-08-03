@@ -1,21 +1,23 @@
 import './App.css';
 import {Route, Routes} from "react-router-dom";
-import Login from './Components/Pages/login';
-import Home from './Components/Pages/home';
+import Login from './Pages/login';
+import Home from './Pages/home';
 import Nav from './Components/nav';
-import Register from './Components/Pages/register';
-import About from './Components/Pages/about';
-import Stories from './Components/Pages/stories';
-import Packages from './Components/Pages/packages';
-import Booking from './Components/Pages/booking';
-import Contact from './Components/Pages/contact';
-import Profile from './Components/Pages/profile';
-import Settings from './Components/Pages/settings';
+import Register from './Pages/register';
+import About from './Pages/about';
+import Stories from './Pages/stories';
+import Packages from './Pages/packages';
+import Booking from './Pages/booking';
+import Contact from './Pages/contact';
+import Profile from './Pages/profile';
+import Settings from './Pages/settings';
 import { Helmet,  HelmetData } from 'react-helmet-async';
-import EmailCode from './Components/Pages/emailCode';
+import EmailCode from './Pages/emailCode';
 import Sure from './Components/sure';
-import Verified from './Components/Pages/verified';
-import BillingInfo from './Components/Pages/billingInfo';
+import Verified from './Pages/verified';
+// import BillingInfo from './Pages/billingInfo';
+import ForgotPassword from './Pages/forgotPassword';
+import CheckResetOtp from './Pages/checkResetOtp';
 
 const helmetData = new HelmetData({});
 function App() {
@@ -30,7 +32,7 @@ function App() {
 
 
       <Nav/>
-      <BillingInfo/>
+      {/* <BillingInfo/> */}
       {/* <Verified/> */}
       {/* <EmailCode/> */}
       {/* <Sure/> */}
@@ -48,6 +50,8 @@ function App() {
         <Route path="/emailCode" element={<EmailCode/>}/>
         <Route path="/sure" element={<Sure/>}/>
         <Route path="/verified" element={<Verified/>}/>
+        <Route path="/forgotpassword" element={<ForgotPassword/>}/>
+        <Route path="/checkResetOtp" element={<CheckResetOtp/>}/>
       </Routes>
       
     </div>

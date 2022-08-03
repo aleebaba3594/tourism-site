@@ -5,19 +5,26 @@ const handlePackages = require("./Middelewares/packages");
 const handleAllPackages = require("./Middelewares/allPackages");
 const handleBooking = require("./Middelewares/booking");
 const handleSeeBooking = require("./Middelewares/seeBooking");
- const handleVerify = require("./Middelewares/verifyUser")
+const handleVerify = require("./Middelewares/verifyUser");
+const handleOtp = require("./Middelewares/otp");
+const handleResetOtp = require("./Middelewares/resendOtp");
+const handleProfile = require("./Middelewares/profile");
+const handleForgotPassword = require("./Middelewares/forgotPassword");
+const handleUpdatePassword = require("./Middelewares/updatePassword");
 const express = require("express");
 const route = express.Router();
 
-
 route.post("/register", handleRegister);
+route.post("/otp", handleOtp);
+route.post("/resendOtp", handleResetOtp);
+route.post("/profile", handleProfile);
 route.post("/login", handleLogin);
+route.post("/forgotPassword", handleForgotPassword);
+route.post("/updatePassword", handleUpdatePassword);
 route.get("/allUsers", handleAllUsers);
 route.post("/packages", handlePackages);
 route.get("/allPackages", handleAllPackages);
 route.post("/booking", handleBooking);
-route.post("/seeBooking",handleVerify, handleSeeBooking);
-
-
+route.post("/seeBooking", handleVerify, handleSeeBooking);
 
 module.exports = route;

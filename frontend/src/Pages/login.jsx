@@ -1,6 +1,6 @@
 import React from "react";
-import LoginLogo from "../../images/site-gifts/9.PNG";
-import SignInAndRegisterLogo from "../../images/SignInAndRegisterLogo.PNG"
+import LoginLogo from "../images/site-gifts/9.PNG";
+import SignInAndRegisterLogo from "../images/SignInAndRegisterLogo.PNG"
 import { BsGoogle } from "react-icons/bs";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -219,14 +219,17 @@ export default function Login() {
                         </Link>
                       </label>
                     </div>
+                    <Link to="/forgotPassword">
+                    <div className="text-sm ">
 
-                    <div className="text-sm">
                       <span
-                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                        className="cursor-pointer font-medium text-indigo-600 hover:text-indigo-500"
                       >
                         Forgot your password?
                       </span>
                     </div>
+                    </Link>
+
                   </div>
 
                   <div>

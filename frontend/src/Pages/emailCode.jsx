@@ -1,7 +1,7 @@
 import React from "react";
-import SignInAndRegisterLogo from "../../images/SignInAndRegisterLogo.PNG";
+import SignInAndRegisterLogo from "../images/SignInAndRegisterLogo.PNG";
 import { Link } from "react-router-dom";
-// import { useState,useEffect } from "react";
+import { useState } from "react";
 
 // document.addEventListener("DOMContentLoaded", function (event) {
 //     function OTPInput() {
@@ -34,45 +34,21 @@ import { Link } from "react-router-dom";
 
 const EmailCode = () => {
 
-//     const [Otp, setOtp] = useState("")
+    const [Otp, setOtp] = useState("")
+    const [OtpConcat, setOtpConcat] = useState("")
 
-//     const handleInput=(e)=>{
-//         setOtp({...Otp,[e.target.name]:e.target.value})
+    const handleInput=(e)=>{
+        setOtp({...Otp,[e.target.name]:e.target.value})
            
-//     }
-//     // console.log(Otp,"outside");
-//     const handleVerify=()=>{
-//         console.log(Otp,"submit");
-//     }
-//     document.addEventListener("DOMContentLoaded", function (event) {
-//     function OTPInput() {
-//       const inputs = document.querySelectorAll("#otp > *[id]");
-//       for (let i = 0; i < inputs.length; i++) {
-//         inputs[i].addEventListener("keydown", function (event) {
-//           if (event.key === "Backspace") {
-//             inputs[i].value = "";
-//             if (i !== 0) inputs[i - 1].focus();
-//           } else {
-//             if (i === inputs.length - 1 && inputs[i].value !== "") {
-//               return true;
-//             } else if (event.keyCode > 47 && event.keyCode < 58) {
-//               inputs[i].value = event.key;
-//               if (i !== inputs.length - 1) inputs[i + 1].focus();
-//               event.preventDefault();
-//             } else if (event.keyCode > 64 && event.keyCode < 91) {
-//               inputs[i].value = String.fromCharCode(event.keyCode);
-//               if (i !== inputs.length - 1) inputs[i + 1].focus();
-//               event.preventDefault();
-//             }
-//           }
-//         });
-//       }
-//     }
-//     OTPInput();
-//   });
-let inp=document.querySelectorAll("input")
-console.log(inp,"new");
-
+    }
+    const handleVerify =()=>{
+      
+      const {otp1,otp2,otp3,otp4,otp5,otp6}=Otp
+      const result = otp1+otp2+otp3+otp4+otp5+otp6
+      setOtpConcat(result)
+    }
+    console.log(OtpConcat)
+    
   return (
     <div>
       <div className=" min-w-screen h-screen animated fadeIn faster  fixed  left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none bg-no-repeat bg-center bg-cover ">
@@ -93,55 +69,55 @@ console.log(inp,"new");
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" id="otp"></div>
 
               <input
-                className="m-2  h-10 w-10 text-center form-control rounded border border-transparent  leading-5 bg-gray-700 text-gray-300 placeholder-gray-400 focus:outline-none focus:border-transparent focus:ring-white focus:text-[#76C0FA] sm:text-lg"
+                className="w-8 bg-blue-400 m-2"
                 type="text"
                 id="first"
                 maxLength="1"
-                name="otp"
-                // onChange={handleInput}
+                name="otp1"
+                onChange={handleInput}
                 
               />
 
               <input
-                className="m-2  h-10 w-10 text-center form-control rounded border border-transparent  leading-5 bg-gray-700 text-gray-300 placeholder-gray-400 focus:outline-none focus:border-transparent focus:ring-white focus:text-[#76C0FA] sm:text-lg"
+                className="w-8 bg-blue-400 m-2"
                 type="text"
                 id="second"
                 maxLength="1"
-                name="otp"
-                // onChange={handleInput}
+                name="otp2"
+                onChange={handleInput}
               />
 
               <input
-                className="m-2  h-10 w-10 text-center form-control rounded border border-transparent  leading-5 bg-gray-700 text-gray-300 placeholder-gray-400 focus:outline-none focus:border-transparent focus:ring-white focus:text-[#76C0FA] sm:text-lg"
+                className="w-8 bg-blue-400 m-2"
                 type="text"
                 id="third"
                 maxLength="1"
-                name="otp"
-                // onChange={handleInput}
+                name="otp3"
+                onChange={handleInput}
               />
               <input
-                className="m-2  h-10 w-10 text-center form-control rounded border border-transparent  leading-5 bg-gray-700 text-gray-300 placeholder-gray-400 focus:outline-none focus:border-transparent focus:ring-white focus:text-[#76C0FA] sm:text-lg"
+                className="w-8 bg-blue-400 m-2"
                 type="text"
                 id="fourth"
                 maxLength="1"
-                name="otp"
-                // onChange={handleInput}
+                name="otp4"
+                onChange={handleInput}
               />
               <input
-                className="m-2  h-10 w-10 text-center form-control rounded border border-transparent  leading-5 bg-gray-700 text-gray-300 placeholder-gray-400 focus:outline-none focus:border-transparent focus:ring-white focus:text-[#76C0FA] sm:text-lg"
+                className="w-8 bg-blue-400 m-2"
                 type="text"
                 id="fifth"
                 maxLength="1"
-                name="otp"
-                // onChange={handleInput}
+                name="otp5"
+                onChange={handleInput}
               />
               <input
-                className="m-2  h-10 w-10 text-center form-control rounded border border-transparent  leading-5 bg-gray-700 text-gray-300 placeholder-gray-400 focus:outline-none focus:border-transparent focus:ring-white focus:text-[#76C0FA] sm:text-lg"
+                className="w-8 bg-blue-400 m-2"
                 type="text"
                 id="sixth"
                 maxLength="1"
-                name="otp"
-                // onChange={handleInput}
+                name="otp6"
+                onChange={handleInput}
               />
             </div>
             <div className="p-3  mt-2 text-center space-x-4 md:block">
@@ -155,7 +131,7 @@ console.log(inp,"new");
               </Link>
               {/* <Link to={"/verified"}> */}
                 <button className="mb-2 md:mb-0 border px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-white bg-[#1F2937] hover:text-green-600 hover:font-medium hover:border-green-600"
-                // onClick={handleVerify}
+                onClick={handleVerify}
                 >
                   Verify
                 </button>
